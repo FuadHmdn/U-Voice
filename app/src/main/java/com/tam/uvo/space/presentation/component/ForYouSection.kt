@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tam.uvo.R
-import com.tam.uvo.space.presentation.data.SpaceItem
+import com.tam.uvo.space.data.SpaceItem
 import com.tam.uvo.ui.theme.Grey
 
 val itemForYou = listOf(
