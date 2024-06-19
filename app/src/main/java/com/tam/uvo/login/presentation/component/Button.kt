@@ -26,7 +26,7 @@ fun ButtonLogIn(navController: NavController){
         Button(
             modifier = Modifier.fillMaxWidth()
                 .height(55.dp),
-            shape = RoundedCornerShape(5.dp),
+            shape = RoundedCornerShape(15.dp),
             onClick = { navController.navigate(Screens.HomeScreen.name) },
             colors = ButtonDefaults.buttonColors(UNILA)
         ) {
@@ -48,7 +48,7 @@ fun ButtonRegister(navController: NavController){
         Button(
             modifier = Modifier.fillMaxWidth()
                 .height(55.dp),
-            shape = RoundedCornerShape(5.dp),
+            shape = RoundedCornerShape(15.dp),
             onClick = {  },
             colors = ButtonDefaults.buttonColors(UNILA)
         ) {

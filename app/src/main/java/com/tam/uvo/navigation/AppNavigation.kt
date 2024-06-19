@@ -21,6 +21,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tam.uvo.Notification.presentation.NotificationScreen
 import com.tam.uvo.home.presentation.HomeScreen
+import com.tam.uvo.home.presentation.write.WriteScreen
 import com.tam.uvo.login.presentation.LoginScreen
 import com.tam.uvo.login.presentation.RegisterScreen
 import com.tam.uvo.profile.presentation.ProfileScreen
@@ -36,7 +37,7 @@ fun AppNavigation() {
 
     Scaffold(
         bottomBar = {
-            if (currentDestination?.route !in listOf("login", "register")) {
+            if (currentDestination?.route !in listOf("login", "register", "post")) {
                 NavigationBar(
                     modifier = Modifier
                         .height(68.dp),
@@ -82,9 +83,10 @@ fun AppNavigation() {
                 .padding(paddingValues)
         ) {
             composable("login") { LoginScreen(navController) }
+            composable("post") { WriteScreen(navController) }
             composable("register") { RegisterScreen(navController) }
             composable(route = Screens.HomeScreen.name) {
-                HomeScreen()
+                HomeScreen(navController)
             }
             composable(route = Screens.SpaceScreen.name) {
                 SpaceScreen()

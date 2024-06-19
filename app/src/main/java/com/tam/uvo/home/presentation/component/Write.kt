@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -31,11 +32,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.tam.uvo.R
 
 @Preview(showBackground = true)
 @Composable
-fun Write(){
+fun Write(navController: NavController){
     Row(
         modifier = Modifier
             .padding(start = 16.dp, end = 16.dp, top = 5.dp, bottom = 10.dp)
@@ -56,14 +58,12 @@ fun Write(){
 
         Spacer(modifier = Modifier.width(16.dp))
         
-        OutlinedTextField(
+        OutlinedButton(
             modifier = Modifier
-                .height(46.dp)
                 .fillMaxWidth(),
-            value = text,
-            onValueChange = { text = it },
-            textStyle = TextStyle(fontSize = 12.sp),
-            shape = RoundedCornerShape(15.dp)
-        )
+            onClick = { navController.navigate("post") }
+        ) {
+            Text(text = "Apa yang anda pikirkan?")
+        }
     }
 }

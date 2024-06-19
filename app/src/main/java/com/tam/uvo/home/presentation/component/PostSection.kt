@@ -34,6 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.tam.uvo.R
 import com.tam.uvo.home.data.Post
 
@@ -103,14 +104,13 @@ var list = mutableListOf(
     )
 )
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun PostSection(){
+fun PostSection(navController: NavController){
     LazyColumn{
         item {
             TopBar()
             Spacer(modifier = Modifier.height(16.dp))
-            Write()
+            Write(navController)
         }
         items(list.size){index ->
             PostItem(index)
