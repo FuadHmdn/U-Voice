@@ -39,9 +39,9 @@ import com.tam.uvo.ui.theme.Blue
 fun NotificationScreen(){
     val scrollState = rememberScrollState()
     Column(modifier = Modifier.verticalScroll(scrollState) ) {
-        Text(text = "Notification", fontSize = 22.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 16.dp, top = 16.dp))
+        Text(text = "Notification", fontSize = 28.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 16.dp, top = 16.dp))
         Spacer(modifier = Modifier.height(10.dp))
-        Text(text = "New", fontSize = 20.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 16.dp, top = 16.dp))
+        Text(text = "New", fontSize = 20.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 5.dp))
         Box(modifier = Modifier
             .fillMaxWidth()
             .background(Blue)) {
