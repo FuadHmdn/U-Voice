@@ -19,24 +19,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.tam.uvo.ui.theme.DarkGrey
 import com.tam.uvo.ui.theme.Grey
 import com.tam.uvo.ui.theme.UNILA
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun SignOut(){
+fun SignOut(navController: NavController){
     Box(
         modifier = Modifier.padding(start = 16.dp, end = 16.dp).fillMaxWidth(),
         contentAlignment = Alignment.Center
     ){
         Button(
             modifier = Modifier
-                .clickable {  }
                 .height(50.dp)
                 .fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(Color.Transparent),
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("login") },
             border = BorderStroke(2.dp, UNILA)
         ) {
             Text(

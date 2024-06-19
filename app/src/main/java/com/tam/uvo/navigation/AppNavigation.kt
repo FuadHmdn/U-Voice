@@ -1,15 +1,9 @@
 package com.tam.uvo.navigation
 
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -20,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -28,6 +21,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tam.uvo.Notification.presentation.NotificationScreen
 import com.tam.uvo.home.presentation.HomeScreen
+import com.tam.uvo.login.presentation.LoginScreen
+import com.tam.uvo.login.presentation.RegisterScreen
 import com.tam.uvo.profile.presentation.ProfileScreen
 import com.tam.uvo.report.presentation.ReportScreen
 import com.tam.uvo.space.presentation.SpaceScreen
@@ -80,10 +75,12 @@ fun AppNavigation() {
     ) { paddingValues ->
         NavHost(
             navController = navController,
-            startDestination = Screens.HomeScreen.name,
+            startDestination = "login",
             modifier = Modifier
                 .padding(paddingValues)
         ) {
+            composable("login") { LoginScreen(navController) }
+            composable("register") { RegisterScreen(navController) }
             composable(route = Screens.HomeScreen.name) {
                 HomeScreen()
             }
@@ -97,7 +94,7 @@ fun AppNavigation() {
                 NotificationScreen()
             }
             composable(route = Screens.ProfileScreen.name) {
-                ProfileScreen()
+                ProfileScreen(navController)
             }
         }
     }
