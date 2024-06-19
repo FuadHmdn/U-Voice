@@ -42,7 +42,7 @@ fun General(){
     Surface(
         modifier = Modifier
             .padding(start = 16.dp, end = 16.dp),
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(15.dp),
         border = BorderStroke(1.dp, Color.LightGray)
     ) {
         Box(

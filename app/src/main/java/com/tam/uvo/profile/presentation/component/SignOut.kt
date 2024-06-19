@@ -1,5 +1,7 @@
 package com.tam.uvo.profile.presentation.component
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -30,10 +32,12 @@ fun SignOut(){
     ){
         Button(
             modifier = Modifier
+                .clickable {  }
                 .height(50.dp)
                 .fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(DarkGrey),
+            colors = ButtonDefaults.buttonColors(Color.Transparent),
             onClick = { /*TODO*/ },
+            border = BorderStroke(2.dp, UNILA)
         ) {
             Text(
                 text = "Sign Out",
