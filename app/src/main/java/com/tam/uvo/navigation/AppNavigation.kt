@@ -31,44 +31,46 @@ import com.tam.uvo.space.presentation.SpaceScreen
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination
 
     Scaffold(
         bottomBar = {
-            NavigationBar(
-                modifier = Modifier
-                    .height(68.dp),
-                containerColor = Color.White,
-                contentColor = Color.Transparent
+            if (currentDestination?.route !in listOf("login", "register")) {
+                NavigationBar(
+                    modifier = Modifier
+                        .height(68.dp),
+                    containerColor = Color.White,
+                    contentColor = Color.Transparent
 
-            ) {
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentDestination = navBackStackEntry?.destination
+                ) {
 
-                list.forEach { navItem ->
-                    NavigationBarItem(
-                        modifier = Modifier
-                            .padding(bottom = 13.dp)
-                            .background(Color.Transparent),
-                        selected = false,
-                        onClick = {
-                            navController.navigate(navItem.route) {
-                                popUpTo(navController.graph.findStartDestination().id) {
-                                    saveState = true
+                    list.forEach { navItem ->
+                        NavigationBarItem(
+                            modifier = Modifier
+                                .padding(bottom = 13.dp)
+                                .background(Color.Transparent),
+                            selected = false,
+                            onClick = {
+                                navController.navigate(navItem.route) {
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
                                 }
-                                launchSingleTop = true
-                                restoreState = true
+                            },
+                            icon = {
+                                Icon(
+                                    modifier = Modifier
+                                        .size(28.dp),
+                                    imageVector = navItem.icon,
+                                    contentDescription = null,
+                                    tint = Color.Black
+                                )
                             }
-                        },
-                        icon = {
-                            Icon(
-                                modifier = Modifier
-                                    .size(28.dp),
-                                imageVector = navItem.icon,
-                                contentDescription = null,
-                                tint = Color.Black
-                            )
-                        }
-                    )
+                        )
+                    }
                 }
             }
         }
