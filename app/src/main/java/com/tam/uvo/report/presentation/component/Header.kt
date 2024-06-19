@@ -40,7 +40,7 @@ fun Header(){
         horizontalArrangement = Arrangement.Start
     ) {
         Box(modifier = Modifier
-            .padding(top=5.dp)
+
             .size(70.dp)
         ){
             Icon(
