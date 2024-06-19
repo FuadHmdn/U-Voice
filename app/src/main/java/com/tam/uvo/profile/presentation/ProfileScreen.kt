@@ -11,15 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.tam.uvo.profile.presentation.component.General
 import com.tam.uvo.profile.presentation.component.Notification
 import com.tam.uvo.profile.presentation.component.ProfileData
 import com.tam.uvo.profile.presentation.component.SignOut
 
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun ProfileScreen(){
+fun ProfileScreen(navController: NavController){
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -33,7 +33,7 @@ fun ProfileScreen(){
         Spacer(modifier = Modifier.height(16.dp))
         Notification()
         Spacer(modifier = Modifier.height(16.dp))
-        SignOut()
+        SignOut(navController)
         Spacer(modifier = Modifier.height(36.dp))
     }
 }
