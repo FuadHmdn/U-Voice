@@ -26,7 +26,7 @@ fun ProfileScreen(){
             .fillMaxWidth()
             .verticalScroll(scrollState),
     ) {
-        Spacer(modifier = Modifier.height(26.dp))
+        Spacer(modifier = Modifier.height(36.dp))
         ProfileData()
         Spacer(modifier = Modifier.height(16.dp))
         General()

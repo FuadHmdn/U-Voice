@@ -42,7 +42,7 @@ fun General(){
     Surface(
         modifier = Modifier
             .padding(start = 16.dp, end = 16.dp),
-        shape = RoundedCornerShape(15.dp),
+        shape = RoundedCornerShape(25.dp),
         border = BorderStroke(1.dp, Color.LightGray)
     ) {
         Box(
@@ -58,7 +58,7 @@ fun General(){
                 Text(
                     text = "General",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 22.sp
+                    fontSize = 20.sp
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -93,7 +93,7 @@ fun General(){
                     Text(
                         text = "Arip Saputri",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
@@ -127,7 +127,7 @@ fun General(){
                     Text(
                         text = "2217015099@students.unila.ac.id",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
@@ -161,7 +161,7 @@ fun General(){
                     Text(
                         text = "08934342535",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
@@ -183,7 +183,7 @@ fun General(){
                     Text(
                         text = "Riwayat Laporan",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
