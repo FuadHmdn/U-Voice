@@ -44,7 +44,7 @@ fun Notification(){
     Surface(
         modifier = Modifier
             .padding(start = 16.dp, end = 16.dp),
-        shape = RoundedCornerShape(15.dp),
+        shape = RoundedCornerShape(25.dp),
         border = BorderStroke(1.dp, Color.LightGray)
     ) {
         Box(
@@ -60,7 +60,7 @@ fun Notification(){
                 Text(
                     text = "Notifiction",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 22.sp
+                    fontSize = 20.sp
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -95,7 +95,7 @@ fun Notification(){
                     Text(
                         text = "Push Notification",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
@@ -129,7 +129,7 @@ fun Notification(){
                     Text(
                         text = "SMS Notification",
                         color = Color.Black,
-                        fontSize = 16.sp,
+                        fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
