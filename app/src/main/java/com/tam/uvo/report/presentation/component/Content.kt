@@ -175,13 +175,13 @@ fun Content() {
                 .padding(horizontal = 20.dp, vertical = 10.dp),
         ) {
              Row(modifier = Modifier
-                 .width(250.dp)
+                 .width(200.dp)
                  .clip(RoundedCornerShape(10.dp))
-                 .background(Color.Red.copy(alpha = .7f)),
+                 .background(Color.Red.copy(alpha = .5f)),
              ){
                  Text(modifier = Modifier.padding(vertical=5.dp, horizontal = 10.dp),
                      text = "Dilarang membuat Laporan Palsu!",
-                     fontSize =15.sp,
+                     fontSize =10.sp,
                      fontWeight = FontWeight.Bold,
                      color = Color.White
                  )

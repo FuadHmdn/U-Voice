@@ -2,6 +2,7 @@ package com.tam.uvo.report.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -41,6 +42,7 @@ fun Header(){
     ) {
         Box(modifier = Modifier
             .size(70.dp)
+            .clickable {  }
         ){
             Icon(
                 imageVector = Icons.Outlined.ArrowBackIos, contentDescription ="back",
