@@ -69,19 +69,13 @@ fun Content() {
 
             Spacer(modifier = Modifier.width(15.dp))
 
-            Column(
+            Column(modifier = Modifier.padding(top = 10.dp),
                     verticalArrangement = Arrangement.Center
             ) {
             Text(
                 text = "Eric Slebew",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-                )
-
-                Text(
-                    text = "1 Menit yang lalu",
-                    fontSize = 12.sp,
-                    color = Color.Gray
                 )
 
                 Text(
@@ -180,8 +174,23 @@ fun Content() {
                 .fillMaxHeight()
                 .padding(horizontal = 20.dp, vertical = 10.dp),
         ) {
+             Row(modifier = Modifier
+                 .width(250.dp)
+                 .clip(RoundedCornerShape(10.dp))
+                 .background(Color.Red.copy(alpha = .7f)),
+             ){
+                 Text(modifier = Modifier.padding(vertical=5.dp, horizontal = 10.dp),
+                     text = "Dilarang membuat Laporan Palsu!",
+                     fontSize =15.sp,
+                     fontWeight = FontWeight.Bold,
+                     color = Color.White
+                 )
+             }
+
+
             Button(
                 modifier = Modifier
+                    .padding(top = 50.dp)
                     .width(1000.dp)
                     .height(50.dp),
                 onClick = { /*TODO*/ },
