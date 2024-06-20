@@ -42,6 +42,4 @@ fun ReportScreen(){
         Spacer(modifier = Modifier.height(5.dp))
         Content()
     }
-
-
 }

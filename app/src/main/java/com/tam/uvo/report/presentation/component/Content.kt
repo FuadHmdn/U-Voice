@@ -20,6 +20,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Comment
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowDown
 import androidx.compose.material.icons.outlined.KeyboardDoubleArrowUp
+import androidx.compose.material.icons.outlined.SendAndArchive
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -34,6 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -127,7 +129,7 @@ fun Content() {
             .clip(RoundedCornerShape(50.dp)),
             painter = painterResource(id = R.drawable.ac), contentDescription = ""
         )
-        // Kategori
+        //Kategori
         Text(
             modifier = Modifier
                 .padding(horizontal = 20.dp)
@@ -139,8 +141,8 @@ fun Content() {
 
         //RadioGroup untuk memilih kategori
         Box(modifier = Modifier
-                .padding(horizontal = 5.dp, vertical = 10.dp)
-                .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(20.dp))
+            .padding(horizontal = 5.dp, vertical = 10.dp)
+            .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(20.dp))
             ){
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -169,15 +171,14 @@ fun Content() {
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
                 Text(modifier = Modifier.padding(top = 20.dp, end = 20.dp),
-                    text = "Keamanan")
+                    text = "Layanan")
                 }
             }
 
         Box(
-            modifier = Modifier.fillMaxHeight()
-                .padding(horizontal = 20.dp),
-            contentAlignment = Alignment.Center
-
+            modifier = Modifier
+                .fillMaxHeight()
+                .padding(horizontal = 20.dp, vertical = 10.dp),
         ) {
             Button(
                 modifier = Modifier
@@ -192,8 +193,16 @@ fun Content() {
                 Text(
                     text = "Kirim Laporan",
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
                 )
+
+                Icon(modifier = Modifier
+                    .size(35.dp)
+                    .padding(start = 10.dp, bottom = 5.dp)
+                    .rotate(-45f),
+                    imageVector = Icons.Outlined.SendAndArchive, contentDescription ="kirim",
+                    tint = Color.White,
+                    )
             }
         }
     }
